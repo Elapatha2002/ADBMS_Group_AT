@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Dashboard</title>
+  <link rel="stylesheet" href="Employee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="vehicle.html">Vehicle</a></li>
+      <li><a href="customer.html">Customer</a></li>
+      <li><a href="repair.html">Repair</a></li>
+      <li><a href="supplier.html">Supplier</a></li>
+    </ul>
+    <div class="profile-logout">
+      <img src="profile.jpg" alt="Profile" class="profile-icon">
+      <a href="logout.html" class="logout-icon"><i class="fas fa-sign-out-alt"></i></a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</nav>
+
+
+<div class="top-bar">
+  <div class="vehicle-filters">
+    <button class="filter-btn" onclick="setActive(this)">All Vehicles</button>
+    <button class="filter-btn" onclick="setActive(this)">In Stock</button>
+    <button class="filter-btn" onclick="setActive(this)">Sold</button>
+  </div>
+
+  <input type="text" id="searchInput" placeholder="Search or type...">
+</div>
+
+
+
+  <section class="vehicle-table">
+    <table border="1" >
+      <thead>
+        <tr>
+          <th></th>
+          <th>Vehicle Number</th>
+          <th>Type</th>
+          <th>Model</th>
+          <th>Color</th>
+          <th>Chassi No</th>
+          <th>Engine No</th>
+          <th>Manufacturer</th>
+          <th>Year</th>
+          <th>Added Date</th>
+          <th>Status</th>
+          <th>Value (Rs.)</th>
+          <th>Supplier ID</th>
+        </tr>
+      </thead>
+      <tbody id="vehicleBody">
+        <!-- Dynamic rows go here -->
+      </tbody>
+    </table>
+  </section>
+</body>
+
+
+
+
+<script>
+  function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+
+
+function setActive(clickedButton) {
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    clickedButton.classList.add('active');
+}
+</script>
+</html>
