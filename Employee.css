@@ -1,0 +1,221 @@
+/* General Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Dongle', sans-serif;
+  background-color: #f4f4f7;
+  color: #222;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #f4f3f6;
+  padding: 10px 20px;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo img {
+  height: 45px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.profile-logout {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-icon {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.logout-icon i {
+  font-size: 22px;
+  color: #000;
+}
+
+/* Hamburger menu  */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #f4f3f6;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .profile-logout {
+    display: none; 
+  }
+}
+
+/* filter buttons & search bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #fff;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Search Input */
+#searchInput {
+  flex: 1;
+  max-width: 300px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Filter Buttons */
+.vehicle-filters {
+  display: flex;
+  gap: 15px;
+}
+
+.vehicle-filters button {
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: whitesmoke ;
+  color: #000000;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.vehicle-filters button:hover {
+  background-color:rgb(200, 147, 100);
+  color: #ffffff;
+}
+
+.vehicle-filters button.active {
+  background-color:rgb(200, 147, 100);
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .vehicle-filters {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+
+
+/* Table Section */
+.vehicle-table {
+  padding: 0 30px 40px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+thead {
+  background-color: #f7c6b0;
+  text-align: center;
+}
+
+thead th {
+  padding: 12px;
+  font-size: 18px;
+}
+
+tbody td {
+  padding: 10px;
+  font-size: 17px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.status-sold {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.status-available {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  #searchInput {
+    width: 100%;
+  }
+}
