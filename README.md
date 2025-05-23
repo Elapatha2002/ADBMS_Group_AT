@@ -7,11 +7,11 @@ Installation
    ```
    import pyodbc
 
+    DRIVER='your_driver'(ODBC Driver 17 for SQL Server);
     Database connection attributes
     server = 'your_server_name'
     database = 'your_database_name'
-    username = 'your_username'
-    password = 'your_password'
+    Trusted_Connection=yes;
 
 3. Install necessary dependencies:
    ```
